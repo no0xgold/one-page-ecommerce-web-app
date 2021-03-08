@@ -1,0 +1,10 @@
+for ecommerce we have:
+post
+---user
+---date
+---price
+---buy
+user
+---sign in
+---logout
+---profile
