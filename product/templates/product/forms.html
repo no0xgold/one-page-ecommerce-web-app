@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+
+<!--by default it will be POST
+and action if you put period 
+it sends to whatever urls that is rendering this form 
+of if you want to send to a specific 
+url just write 
+action="/send/to/this"-->
+{% block title %}
+create - {{block.super}}
+{% endblock %}
+{% block content %}
+<form method="POST" action=".">{% csrf_token %}
+    <input type='text' name="title"/>
+    <button type="submit">Send data</button>
+</form>
+{% endblock %}
+

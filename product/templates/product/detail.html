@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}
+{{object.title}} - {{block.super}}
+{% endblock %}
+
+{% block content %}
+{% include 'navbar.html' %}
+<h1>{{object.id}}</h1>
+<p>{{object.title}}</p>
+{% if request.path == "/" %}
+    <h3>Welcom </h3>
+{% else %}
+    {% include "product/detail_snip.html" with product=object %}
+{% endif %}
+{% endblock %}

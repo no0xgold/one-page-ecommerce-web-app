@@ -15,11 +15,17 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, re_path
-from product.views import home_view, show_detail, api_show_detail
+from product.views import (search_view,
+ show_detail,
+ api_show_detail,
+ product_create_view,
+ product_list_view,)
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', home_view),
+    path('search/', search_view),
+    path('products/create/', product_create_view),#anoher option is products-create
     path('products/<int:id>', show_detail),
+    path('products/', product_list_view),
     #path('api/products/<int:id>',  api_show_detail),
     re_path(r'api/products/(?P<id>\d+)/', api_show_detail),
 ]
