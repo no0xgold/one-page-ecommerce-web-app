@@ -1,3 +1,4 @@
 {
-    "git.ignoreLimitWarning": true
+    "git.ignoreLimitWarning": true,
+    "python.pythonPath": "C:\\Users\\no0x\\.virtualenvs\\djangop-LrVmAbie\\Scripts\\python.exe"
 }

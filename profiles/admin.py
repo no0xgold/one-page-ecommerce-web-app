@@ -1,4 +1,4 @@
-from product.models import product
+from product.models import Product
 from django.contrib import admin
 from .models import profile
 # Register your models here.
