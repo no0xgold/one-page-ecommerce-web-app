@@ -124,3 +124,18 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_DIRS=[
+    BASE_DIR / 'staticfiles'#or os.path.join(str(BASE_DIR), "staticfiles")
+]
+STATIC_ROOT = BASE_DIR / 'cdn_test' / 'static'
+
+MEDIA_URL = '/media/'
+#this is the path of any file field  which was unploaded
+MEDIA_ROOT = BASE_DIR / 'cdn_test' / 'media'
+
+PROTECTED_MEDIA = BASE_DIR / 'cdn_test' / 'protected'
+
+if DEBUG:
+    STATIC_ROOT.mkdir(parents=True , exist_ok=True)#os.makedirs()
+    MEDIA_ROOT.mkdir(parents=True , exist_ok=True)
+    PROTECTED_MEDIA.mkdir(parents=True , exist_ok=True)

@@ -11,7 +11,7 @@ action="/send/to/this"-->
 create - {{block.super}}
 {% endblock %}
 {% block content %}
-<form method="POST" action=".">{% csrf_token %}
+<form method="POST" action="." enctype="multipart/form-data" >{% csrf_token %}
     {{form.as_p }}
     <button type="submit">Send data</button>
 </form>

@@ -19,9 +19,15 @@ def search_view(request):
     return render(request, "home.html", context)
 @staff_member_required
 def product_create_view(request, *args, **kwargs):
-    form = productsForm(request.POST or None)
+    form = productsForm(request.POST or None , request.FILES or None)
     if form.is_valid():
         obj = form.save(commit=False)
+        image = request.FILES.get('image')
+        media=request.FILES.get('media')
+        if media:
+            obj.media =media
+        if image:
+            obj.image = image
         obj.user = request.user
         obj.save()
         form = productsForm()

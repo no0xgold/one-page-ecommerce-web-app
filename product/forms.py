@@ -11,6 +11,8 @@ class productsForm(forms.ModelForm):
         fields = [
             'title',
             'dicription',
+            'image',
+            'media',
             ]
     def clean_title(self):
         data = self.cleaned_data.get('title')

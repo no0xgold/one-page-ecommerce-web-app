@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+
+<!--by default it will be POST
+and action if you put period 
+it sends to whatever urls that is rendering this form 
+of if you want to send to a specific 
+url just write 
+action="/send/to/this"-->
+{% block title %}
+create - {{block.super}}
+{% endblock %}
+{% block content %}
+<form method="POST" action=".">{% csrf_token %}
+    {{form.as_p }}
+
+    <p>
+        <b>Subtotal</b>{{object.subtotal }}
+    </p>
+    <p>
+        <b>Tax</b>{{object.tax }}
+    </p>
+    <p>
+        <b>Total</b>{{object.total }}
+    </p>
+    <p>
+        <b>Discount</b>{{object.discount }}
+    </p>
+    <p>
+        <b>How many? </b>{{object.amount_of_order }}
+    </p>
+    
+    <button type="submit">Complete Order</button>
+</form>
+{% endblock %}
+
