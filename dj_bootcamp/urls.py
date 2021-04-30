@@ -18,7 +18,7 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, re_path
 from users.views import register_view, login_view, logout_view
-from order.views import (order_checkout_view,
+from order.views import (order_checkout_view,Download_Order,
 )
 from product.views import (search_view,
  show_detail,
@@ -30,6 +30,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',TemplateView.as_view(template_name='base.html') ),
     path('checkout/', order_checkout_view),
+    path('download/', Download_Order),
     path('login/', login_view),
     path('logout/', logout_view),
     path('register/', register_view),
